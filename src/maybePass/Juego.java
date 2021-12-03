@@ -121,6 +121,19 @@ public class Juego extends JPanel implements KeyListener, Runnable {
     // metodo dibujarse
     protected void paintComponent(Graphics g) {
         this.limpiarPantalla(g);
+        if (pantallaActual == PANTALLA_INICIO) {
+            dibujarInicioJuego(g);
+        }
+        if (pantallaActual == PANTALLA_PERDEDOR) {
+            if (this.pantallaPerdedor == null) {
+                this.pantallaPerdedor = new PantallaPerdedor(anchoJuego, largoJuego, "imagenes/perdiste.png", this.puntaje.getPuntaje());
+            }
+            pantallaPerdedor.dibujarse(g);
+        }
+        if (pantallaActual == PANTALLA_GANADOR) {
+            pantallaGanador.dibujarse(g);
+        }
+        this.limpiarPantalla(g);
         zonaSegura.dibujarse(g);
         pared.dibujarse(g);
         ninja.dibujarse(g);
@@ -257,10 +270,10 @@ public class Juego extends JPanel implements KeyListener, Runnable {
         for (int x = 1; x <= enemigosPorLinea; x++) {
             for (int y = 1; y <= filasDeEnemigos; y++) {
             	if( y % 2 == 0) {
-            		agregarEnemigo(new EnemigoRedondo(1, 60 + y * 30, 1, 0, 20, 20, Color.white));
+            		agregarEnemigo(new Enemigo(1, 60 + y * 30, 1, 0, 20, 20, Color.white));
             	}
             	else {
-            		agregarEnemigo(new EnemigoRedondo(anchoJuego - 20, 60 + y * 30, 1, 0, 20, 20, Color.red));
+            		agregarEnemigo(new Enemigo(anchoJuego - 20, 60 + y * 30, 1, 0, 20, 20, Color.red));
             	}
                 
             }
