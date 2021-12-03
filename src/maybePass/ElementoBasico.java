@@ -106,5 +106,13 @@ public abstract class ElementoBasico implements Elemento {
     public void setColor(Color color) {
         this.color = color;
     }
+	
+       public void rebotarEnEjeX() {
+        velocidadX = -velocidadX;
+    }
+
+    public void rebotarEnEjeY() {
+        velocidadY = -velocidadY;
+    } 
 
 }
