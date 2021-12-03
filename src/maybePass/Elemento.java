@@ -22,8 +22,4 @@ public interface Elemento extends Dibujable {
 
     public boolean hayColision(Elemento elemento);
 
-    public void rebotarEnEjeX();
-
-    public void rebotarEnEjeY();
-
 }
