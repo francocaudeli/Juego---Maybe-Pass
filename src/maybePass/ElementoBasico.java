@@ -51,14 +51,6 @@ public abstract class ElementoBasico implements Elemento {
         posicionY = posicionY + velocidadY;
     }
 
-    public void rebotarEnEjeX() {
-        velocidadX = -velocidadX;
-    }
-
-    public void rebotarEnEjeY() {
-        velocidadY = -velocidadY;
-    } 
-
     public double getVelocidadX() {
         return velocidadX;
     }
