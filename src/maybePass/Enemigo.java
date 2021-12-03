@@ -10,6 +10,9 @@ public abstract class Enemigo extends ElementoBasico {
         super(posicionX, posicionY, velocidadX, velocidadY, ancho, largo, color);
     }
 
-    public abstract void destruirse(Graphics graphics);
+        public void dibujarse(Graphics graphics) {
+        graphics.setColor(getColor());
+        graphics.fillOval(getPosicionX(), getPosicionY(), getAncho(), getLargo());
+    }
 
 }
